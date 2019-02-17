@@ -61,10 +61,10 @@ public class UserController {
 	public String getUserById(@PathVariable("id") long id, Model model) {
 		model.addAttribute("user", this.userService.getUserById(id));
 		model.addAttribute("listUsers", this.userService.listUsers());
-		return "user";
+		return "editUser";
 	}
 
-	@RequestMapping(value = "/user/edit", method = RequestMethod.PUT, consumes = {
+	@RequestMapping(value = "/user/edit", method = RequestMethod.POST, consumes = {
 			MediaType.MULTIPART_FORM_DATA_VALUE })
 	public String updateUser(@ModelAttribute("user") User u, BindingResult bindingResult) {
 		this.userService.updateUser(u);

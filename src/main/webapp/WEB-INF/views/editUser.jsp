@@ -14,12 +14,12 @@
 </head>
 <body>
 <h1>
-	Add a User
+	Edit a User
 </h1>
 
-<c:url var="addAction" value="/user/add" ></c:url>
+<c:url var="editAction" value="/user/edit" ></c:url>
 
-<form:form action="${addAction}" commandName="user">
+<form:form action="${editAction}" commandName="user">
 <table>
 	<c:if test="${!empty user.username}">
 	<tr>
@@ -71,9 +71,9 @@
 	</tr>
 	<tr>
 		<td colspan="2">
-			<c:if test="${empty user.username}">
+			<c:if test="${!empty user.username}">
 				<input type="submit"
-					value="<spring:message text="Add User"/>" />
+					value="<spring:message text="Edit user"/>" />
 			</c:if>
 		</td>
 	</tr>
