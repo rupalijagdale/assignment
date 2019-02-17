@@ -25,7 +25,7 @@ public class UserServiceImpl implements UserService {
 	@Override
 	@Transactional(readOnly=false, propagation = Propagation.REQUIRED)
 	public void updateUser(User u) {
-		this.userDAO.addUser(u);
+		this.userDAO.updateUser(u);
 	}
 
 	@Override
